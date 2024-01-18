@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import {Swiper, SwiperSlide} from 'swiper/react'; 
-import SwiperCore from 'swiper';
+// import SwiperCore from 'swiper';
 import { Navigation } from 'swiper/modules';
 import 'swiper/css/bundle';
 import {useSelector} from 'react-redux';
@@ -19,7 +19,7 @@ import {
 import Contact from '../components/Contact';
 
 export default function Listing() {
-  SwiperCore.use([Navigation]);
+  // SwiperCore.use([Navigation]);
   const [listing, setListing] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
