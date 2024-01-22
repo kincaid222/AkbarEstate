@@ -1,8 +1,12 @@
 import { errorHandler } from "../utils/error.js";
-import bcryptjs from 'bcryptjs';
-import User from '../models/modles/user.model.js';
-import listings from "../models/modles/listing.model.js";
-import Listing from "../models/modles/listing.model.js";
+ import bcryptjs from 'bcryptjs';
+ import User from '../models/models/user.model.js';
+ import Listing from "../models/models/listing.model.js";
+
+// import Listing from "../models/listing.model.js";
+// import User from "../models/user.model.js";
+// import { errorHandler } from "../utils/error.js";
+// import bcryptjs from "bcryptjs";
 
 
 export const test = (req, res) => {
@@ -24,7 +28,7 @@ export const updateUser = async (req, res, next) => {
       {
         $set: {
           username: req.body.username,
-          wmail: req.body.email,
+          email: req.body.email,
           password: req.body.password,
           avatar: req.body.avatar,
         },
@@ -51,6 +55,7 @@ export const deleteUser = async (req, res, next) => {
     next(error)
   }
 };
+
 export const getUserListings = async (req, res, next) => {
 if(req.user.id === req.params.id){
   try {
